@@ -140,4 +140,65 @@
   <section class="hero">
     <div class="hero-content">
       <h1>De sprong naar professionele groei voor kunstenaars</h1>
-      <p><em>Ben jij een kunstenaar die klaar is om een volgende stap te zetten? Art Leap biedt je financiële zekerheid, professionele begeleiding en meer zichtbaarheid, zodat jij je kunt richten op wat je het liefst doet: kunst m
+      <p><em>Ben jij een kunstenaar die klaar is om een volgende stap te zetten? Art Leap biedt je financiële zekerheid, professionele begeleiding en meer zichtbaarheid, zodat jij je kunt richten op wat je het liefst doet: kunst maken.</em></p>
+      <a class="btn" href="#aanmelden">Meld je nu aan</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <h2>Wat bieden wij?</h2>
+    <ul>
+      <li><strong>Financiële zekerheid:</strong> Wij nemen structureel werk bij je af, zodat je weet waar je aan toe bent.</li>
+      <li><strong>Professionele presentatie:</strong> Een persoonlijke website, merkcreatie en hoogwaardige fotografie van je werk.</li>
+      <li><strong>Zichtbaarheid:</strong> Toon jouw werk op onze tentoonstellingen en bereik een breed kopend publiek.</li>
+      <li><strong>Ontwikkeling:</strong> Workshops en coaching door gevestigde kunstenaars om jouw techniek, stijl en zakelijke vaardigheden aan te scherpen.</li>
+      <li><strong>Groei & productie:</strong> Regelmatige opdrachten en begeleiding om jouw artistieke output naar een hoger niveau te tillen.</li>
+    </ul>
+
+    <h2>Wie zoeken wij?</h2>
+    <p>Wij zijn op zoek naar toegewijde kunstenaars die:</p>
+    <ul>
+      <li>Regelmatig nieuw werk willen leveren</li>
+      <li>Ambitie hebben om hun passie naar een professioneel niveau te tillen</li>
+      <li>Procesmatig kunnen werken en een duurzaam bestaan als kunstenaar willen opbouwen</li>
+    </ul>
+
+    <h2 id="aanmelden">Aanmelden</h2>
+    <p>Klaar om de sprong te wagen? Stuur een korte motivatie, voorbeelden van je werk en een introductie over jezelf naar <a href="mailto:info@artleap.nl">info@artleap.nl</a>.</p>
+
+    <div class="deadline-container">
+      <p><strong>Deadline aanmelding:</strong> Nog <span id="countdown">120</span> dagen</p>
+    </div>
+
+    <p><a class="btn" href="mailto:info@artleap.nl?subject=Aanmelding%20Art%20Leap">Meld je nu aan</a></p>
+  </div>
+
+  <footer>
+    <p><strong>Art Leap</strong><br>Jouw werk. Jouw groei. Jouw sprong naar professionaliteit.</p>
+  </footer>
+
+  <script>
+    // JavaScript voor countdown:
+    // Stel de einddatum in op 120 dagen vanaf nu
+    var deadline = new Date();
+    deadline.setDate(deadline.getDate() + 120);
+
+    function updateCountdown() {
+      var now = new Date();
+      var diff = deadline - now; // milliseconden verschil
+      var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      // Als de deadline is gepasseerd, zet op 0
+      if (days < 0) {
+        days = 0;
+      }
+
+      document.getElementById('countdown').textContent = days;
+    }
+
+    // Update elke seconde (voor demonstratie, 1x per dag zou ook kunnen)
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>

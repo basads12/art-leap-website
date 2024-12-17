@@ -234,5 +234,10 @@
     var tipText = document.getElementById('tipText');
     var showTipBtn = document.getElementById('showTipBtn');
 
-    showTipBtn.addEventListener('cli
-
+    showTipBtn.addEventListener('click', function() {
+      var randomIndex = Math.floor(Math.random() * tips.length);
+      tipText.textContent = tips[randomIndex];
+    });
+  </script>
+</body>
+</html>

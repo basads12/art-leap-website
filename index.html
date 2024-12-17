@@ -45,20 +45,7 @@
       text-align: center;
       color: #FFF;
       padding: 100px 20px;
-      background: #000;
-      overflow: hidden;
-    }
-    .hero:before {
-      content: "";
-      position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: url('https://media.giphy.com/media/l3vR1PSYVVkIDzW12/giphy.gif') center/cover no-repeat;
-      opacity: 0.4;
-      animation: slowfade 10s infinite alternate;
-    }
-    @keyframes slowfade {
-      0% {opacity:0.4;}
-      100% {opacity:0.8;}
+      background: linear-gradient(to bottom right, #FF5722, #FF8A50);
     }
     .hero-content {
       position: relative;
@@ -130,6 +117,34 @@
     .deadline-container strong {
       color: #FF5722;
     }
+    .tips-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .tips-box {
+      border: 1px solid #EEE;
+      padding: 20px;
+      background: #FFF;
+      border-radius: 4px;
+      display: inline-block;
+      max-width: 400px;
+      min-height: 60px;
+    }
+    .tips-box p {
+      margin: 0;
+      font-style: italic;
+    }
+    .tips-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #FF5722;
+      color: #FFF;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -171,6 +186,16 @@
     </div>
 
     <p><a class="btn" href="mailto:info@artleap.nl?subject=Aanmelding%20Art%20Leap">Meld je nu aan</a></p>
+
+    <div class="tips-section">
+      <h2>Nog wat extra inspiratie?</h2>
+      <div class="tips-box" id="tipsBox">
+        <p id="tipText">Klik op de knop hieronder voor een artistieke tip!</p>
+      </div>
+      <div>
+        <button class="tips-button" id="showTipBtn">Toon een artistieke tip</button>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -178,8 +203,7 @@
   </footer>
 
   <script>
-    // JavaScript voor countdown:
-    // Stel de einddatum in op 120 dagen vanaf nu
+    // Countdown script
     var deadline = new Date();
     deadline.setDate(deadline.getDate() + 120);
 
@@ -188,7 +212,6 @@
       var diff = deadline - now; // milliseconden verschil
       var days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-      // Als de deadline is gepasseerd, zet op 0
       if (days < 0) {
         days = 0;
       }
@@ -196,9 +219,20 @@
       document.getElementById('countdown').textContent = days;
     }
 
-    // Update elke seconde (voor demonstratie, 1x per dag zou ook kunnen)
     setInterval(updateCountdown, 1000);
     updateCountdown();
-  </script>
-</body>
-</html>
+
+    // Grappige feature: Willekeurige artistieke tip
+    var tips = [
+      "Probeer eens met je andere hand te schilderen!",
+      "Laat je inspireren door de vorm van wolken!",
+      "Durf te experimenteren met een onverwachte kleur.",
+      "Maak een mini-schilderijtje van iets op je bureau.",
+      "Sluit je ogen en teken wat je 'voelt' in plaats van wat je ziet."
+    ];
+
+    var tipText = document.getElementById('tipText');
+    var showTipBtn = document.getElementById('showTipBtn');
+
+    showTipBtn.addEventListener('cli
+
